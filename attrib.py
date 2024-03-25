@@ -1,46 +1,86 @@
 import os
-#def attrib():
-    #os.system(f'attrib  +s +h {way}')
-#def deattib():
-    #os.system(f'attrib  -s -h {way}')
+def attrib():
+    if l.casefold() in ["e", "english", "eng"]:
+        way = input("enter way to file:")  
+        os.system(f"attrib  +s +h {way}")
 
-l = input("enter language:")
-
-if l == "e" or l == "E" or l == "English" or l == "english" or l == "eng" or l == "Eng":
-    attORdeatrib = input("Add system attribute or remove? (A/D)\n")
-
-elif l == "r" or l == "R" or l == "Russian "or l == "russian "or l == "ru" or l == "Ru" or l == "р":
-    attORdeatrib =input("Убрать аттрибут системный или снять? (С/Д)\n")
-
-
-#attrib
-while attORdeatrib == "a" or attORdeatrib == "A" or attORdeatrib == "Add" or attORdeatrib == "add" or attORdeatrib == "Д" or attORdeatrib == "д" or attORdeatrib == "Добавить" or attORdeatrib == "ДОБАВИТЬ":
-    if l == "e" or l == "E" or l == "English" or l == "english" or l == "eng" or l == "Eng":
-        print ("Attention! if there are spaces in the path, enclose it in quotes like this:","c:/file")
-        way = input("enter way to file:")
-        #attrib
-        os.system(f'attrib  +s +h {way}')
-        
-    elif l == "r" or l == "R" or l == "Russian "or l == "russian "or l == "ru" or l == "Ru":
-        print ("Внимание! если в пути есть пробелы оберни в ковычки типо:","c:/файл")
+    elif l.casefold() in ["rus","ru","русский","ру","рус","русс"]:
         way = input("введите путь к файлу:")
-        #attrib
-        os.system(f'attrib  +s +h {way}')
+        os.system(f"attrib  +s +h {way}")
+
+
+
+def deattrib():
+    if l.casefold() in ["e", "english", "eng"]:
+        way = input("enter way to file:")  
+        os.system(f"attrib  -s -h {way}")
+
+    elif l.casefold() in ["rus","ru","русский","ру","рус","русс","Р","р"]:
+        way = input("введите путь к файлу:")
+        os.system(f"attrib  -s -h {way}")
+
+
+
+
+
+def main():
+    
+    if l.casefold() in ["e", "english", "eng"]:
+        attORdeattrib = input("Add system attribute or remove? (A/D)\n")
+        return attORdeattrib
+
+    elif l.casefold() in ["р","r","russian","rus","ru","русский","ру","рус","русс"]: 
+        attORdeattrib =input("Добавить аттрибут системный или снять? (Д/С)\n")
+        return attORdeattrib
+    
+print("Я ХЗ ПОЧЕМУ НО РУССКИЙ НЕ РАБОТАЕТ ПИШИ: eng")    
+l = input("enter language:")        
+attORdeattrib = main()
+
+
+
+
+main
+
+while True:
+    if attORdeattrib in ["Д", "д", "add", "Add", "Доб", "Доб", "Добавить","a", "A"]:
+        attrib()
+    elif attORdeattrib in ["d", "delete", "D", "удалить", "У", "Удалить", "r","rm","remove", "R","RM","Remove","снять","Снять"]:
+        deattrib()
+    else:
+        print("error")
+        print("exit")
+        break
         
 
 
+# #attrib
+# while l.casefold() in["a", "add", "A", "добавить", "Д", "Доб", "Добавить"] :
+#     if l.casefold() in ["e", "english", "eng"]:
+#         print ("Attention! if there are spaces in the path, enclose it in quotes like this:","c:/file")
+#         way = input("enter way to file:")
+#         attrib
+        
+        
+#     elif l.casefold() in ["д","доб","добавить","rus","ru","русский","ру","рус","русс"]:
+#         print ("Внимание! если в пути есть пробелы оберни в ковычки типо:","'c:/файл'")
+#         way = input("введите путь к файлу:")
+#         attrib
+        
+    
 
-#deattib
-while attORdeatrib == "r" or attORdeatrib == "R" or attORdeatrib == "rm" or attORdeatrib == "Rm" or attORdeatrib == "RM" or attORdeatrib == "С" or  attORdeatrib == "с" or attORdeatrib == "убрать" or attORdeatrib == "Убр" or attORdeatrib == "снять":
-    if l == "e" or l == "E" or l == "English" or l == "english" or l == "eng" or l == "Eng":
-        print ("Attention! if there are spaces in the path, enclose it in quotes like this:","c:/file")
-        way = input("enter way to file:")
-        #deattib
-        os.system(f'attrib  -s -h {way}')
-    elif l == "r" or l == "R" or l == "Russian "or l == "russian "or l == "ru" or l == "Ru":
-        print ("Внимание! если в пути есть пробелы оберни в ковычки типо:","c:/файл")
-        way = input("введите путь к файлу:")
-        #deattib
-        os.system(f'attrib  -s -h {way}')
+# #deattrib
+# while l.casefold() in ["d", "delete", "D", "удалить", "У", "Удалить"]:
+#     if l.casefold() in ["e", "english", "eng"]:                                                         #english vers
+#         print ("Attention! if there are spaces in the path, enclose it in quotes like this:","c:/file")
+#         way = input("enter way to file:")
+#         deattrib
+
+
+#     elif l.casefold() in ["р","r","russian","rus","ru","русский","ру","рус","русс"]:                     #russian vers
+#         print ("Внимание! если в пути есть пробелы оберни в ковычки типо:","'c:/файл'")
+#         way = input("введите путь к файлу:")
+#         deattrib
+        
         
 
